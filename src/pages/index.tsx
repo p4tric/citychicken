@@ -458,7 +458,8 @@ const LandingPage: React.FC = () => {
                         textTransform: "capitalize",
                         borderRadius: "0px !important",
                         fontWeight: 600,
-                        height: "32px !important",
+                        // height: "32px !important",
+                        height: "46%",
 
                         "&:hover": {
                           backgroundColor: "#fff !important",
@@ -466,7 +467,7 @@ const LandingPage: React.FC = () => {
                           border: "1px solid #C4C4C4",
                           color: theme.palette.text.primary,
                         },
-                        mt: 4,
+                        mt: 4.2,
                       }}
                       size="small"
                       text="Logo"
@@ -486,13 +487,14 @@ const LandingPage: React.FC = () => {
                     }}
                   />
                   <Typography
-                    mt={4}
+                    mt={4.5}
                     mr={5}
                     sx={{
                       color: "#fff",
                       fontFamily: "Nunito Sans",
                       textAlign: "left",
-                      fontSize: "14px",
+                      fontSize: "16px",
+                      lineHeight: "1em",
                     }}
                   >
                     foodfood <br />{" "}

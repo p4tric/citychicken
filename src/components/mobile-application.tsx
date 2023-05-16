@@ -19,7 +19,12 @@ import Nmage from "@/components/common/Nmage";
 const AvailableOnSection: React.FC = () => {
   return (
     <div style={{ marginLeft: "10%" }}>
-      <Grid container justifyContent={"center"} mb={10} alignItems={"center"}>
+      <Grid
+        container
+        justifyContent={"center"}
+        mb={10}
+        alignItems={"flex-start"}
+      >
         <Grid item xs={4}>
           <Box mb={10}>
             <Typography
@@ -53,7 +58,7 @@ const AvailableOnSection: React.FC = () => {
                     textTransform: "capitalize",
                     borderRadius: "0px !important",
                     fontWeight: 700,
-                    height: "31px !important",
+                    height: "33px !important",
 
                     "&:hover": {
                       backgroundColor: "#fff !important",
@@ -61,7 +66,7 @@ const AvailableOnSection: React.FC = () => {
                       border: "1px solid #C4C4C4",
                       color: theme.palette.text.primary,
                     },
-                    mt: 4,
+                    mt: 4.5,
                   }}
                   size="small"
                   text="Logo"
@@ -81,13 +86,14 @@ const AvailableOnSection: React.FC = () => {
                 }}
               />
               <Typography
-                mt={4}
+                mt={4.5}
                 mr={5}
                 sx={{
                   color: "#000",
                   fontFamily: "Nunito Sans",
                   textAlign: "left",
-                  fontSize: "14px",
+                  fontSize: "15px",
+                  lineHeight: "1em",
                 }}
               >
                 foodfood <br />{" "}
@@ -109,12 +115,28 @@ const AvailableOnSection: React.FC = () => {
               md: "none",
             },
             px: 5,
-            py: { xs: 10, sm: 10 },
+            // py: { xs: 10, sm: 10 },
           }}
+          alignItems={"flex-start"}
+          justifyContent={"center"}
         >
+          <Typography sx={{ textAlign: "center", color: "#838383", mb: 5 }}>
+            iOS
+          </Typography>
+
           {/* <img src="/iphone.svg" style={{ marginBottom: "30px" }} width={80} /> */}
-          <Nmage src="/iphone.svg" width={140} height={500} />
-          <Nmage src="/apple.svg" width={140} height={500} />
+          <Nmage
+            src="/iphone.svg"
+            width={140}
+            height={500}
+            style={{ margin: "0 auto", marginBottom: "30px" }}
+          />
+          <Nmage
+            src="/apple.svg"
+            width={140}
+            height={500}
+            style={{ margin: "0 auto" }}
+          />
         </Grid>
         <Grid
           item
@@ -129,11 +151,31 @@ const AvailableOnSection: React.FC = () => {
               md: "none",
             },
             px: 5,
-            py: { xs: 10, sm: 10 },
+            // py: { xs: 10, sm: 10 },
           }}
+          alignItems={"flex-start"}
+          justifyContent={"center"}
         >
-          <img src="/iphone.svg" style={{ marginBottom: "30px" }} />
-          <img src="/googleplay.svg" />
+          <Typography sx={{ textAlign: "center", color: "#838383", mb: 5 }}>
+            Android
+          </Typography>
+
+          {/* <img src="/iphone.svg" style={{ marginBottom: "30px" }} width={80} /> */}
+          <Nmage
+            src="/iphone.svg"
+            width={140}
+            height={500}
+            style={{ margin: "0 auto", marginBottom: "30px" }}
+          />
+          <Nmage
+            src="/googleplay.svg"
+            width={140}
+            height={500}
+            style={{ margin: "0 auto" }}
+          />
+
+          {/* <img src="/iphone.svg" style={{ marginBottom: "30px" }} />
+          <img src="/googleplay.svg" /> */}
         </Grid>
       </Grid>
     </div>
