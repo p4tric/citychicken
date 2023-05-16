@@ -176,15 +176,18 @@ const LandingPage: React.FC = () => {
                 <Typography
                   textAlign={"left"}
                   sx={{
-                    px: 5,
+                    px: 3,
+                    py: 1.5,
                     flexGrow: 1,
                     color: "#fff",
                     fontSize: "1.7rem",
                     fontWeight: 400,
                     fontFamily: "Contrail One !important",
+                    lineHeight: "0.9em",
                   }}
                 >
-                  City Chicken <br />{" "}
+                  City Chicken
+                  <br />{" "}
                   <span style={{ fontSize: "0.875rem" }}>
                     Das Original seit 1996
                   </span>
