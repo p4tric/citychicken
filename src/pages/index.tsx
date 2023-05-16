@@ -15,6 +15,8 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import Image from "next/image";
 import CustomButton from "@/components/common/custom-button";
+import Nmage from "@/components/common/Nmage";
+
 import theme from "@/styles/theme";
 import About from "@/components/about";
 import SliderComponent from "@/components/home-slider";
@@ -32,6 +34,10 @@ import { colors } from "@/data/colors";
 import Footer from "@/components/footer";
 import ImageSlider from "@/components/home-slider";
 import { useRouter } from "next/router";
+
+// hooks
+import useWindowSize from "@/hooks/useWindowSize";
+
 interface Props {
   window?: () => Window;
 }
@@ -45,7 +51,10 @@ const navItems = [
   "standort",
 ];
 
+const restaurantImage = "/Restaurant.png";
+
 const LandingPage: React.FC = () => {
+  const { isMobile } = useWindowSize();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [activeSection, setActiveSection] = useState<string>("restaurant");
   const router = useRouter();
@@ -104,12 +113,39 @@ const LandingPage: React.FC = () => {
   }, []);
 
   const handleSectionClick = (section: string) => {
-    const element = document.getElementById(section);
+    let elementPosition: any;
+    let headerOffset = 80;
+    let element;
 
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    // const element = document.getElementById(section);
+    if (section === "restaurant") {
+      headerOffset = 80;
+      element = document.getElementById("restaurant");
+    } else if (section === "speisekarte") {
+      headerOffset = 80;
+      element = document.getElementById("speisekarte");
+    } else if (section === "services") {
+      headerOffset = 80;
+      element = document.getElementById("services");
+    } else if (section === "offnungszeiten") {
+      headerOffset = 80;
+      element = document.getElementById("offnungszeiten");
+    } else if (section === "standort") {
+      headerOffset = 80;
+      element = document.getElementById("standort");
     }
+
+    elementPosition = element?.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    setTimeout(function () {
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }, 50);
   };
+
   const isBrowser = () => typeof window !== "undefined";
 
   const handleRefresh = () => {
@@ -127,263 +163,252 @@ const LandingPage: React.FC = () => {
 
   return (
     <>
-      <Head>
-        <link
-          rel="stylesheet"
-          type="text/css"
-          charSet="UTF-8"
-          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
-        />
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
-        />
-      </Head>
       <Box>
-        <AppBar sx={{ backgroundColor: "#DD2E35" }}>
-          <Box component="nav">
-            <Stack
-              direction="row"
-              alignItems={"center"}
-              justifyContent={"space-between"}
-            >
-              <Typography
-                textAlign={"left"}
-                sx={{
-                  px: 5,
-                  flexGrow: 1,
-                  color: "#fff",
-                  fontSize: "1.7rem",
-                  fontWeight: 400,
-                  fontFamily: "Contrail One !important",
-                }}
+        {isMobile ? (
+          <AppBar sx={{ backgroundColor: "#DD2E35" }}>
+            <Box component="nav">
+              <Stack
+                direction="row"
+                alignItems={"center"}
+                justifyContent={"space-between"}
               >
-                City Chicken <br />{" "}
-                <span style={{ fontSize: "0.875rem" }}>
-                  Das Original seit 1996
-                </span>
-              </Typography>
-              <IconButton
-                sx={{ float: "right", mx: 2 }}
-                onClick={handleDrawerToggle}
-              >
-                <MenuIcon sx={{ color: "#fff" }} />
-              </IconButton>
-            </Stack>
-            <Drawer
-              variant="temporary"
-              open={mobileOpen}
-              onClose={handleDrawerToggle}
-              ModalProps={{
-                keepMounted: true, // Better open performance on mobile.
-              }}
-              sx={{
-                display: { xs: "block", sm: "block", md: "block" },
-                "& .MuiDrawer-paper": {
-                  boxSizing: "border-box",
-                  width: drawerWidth,
-                },
-              }}
-            >
-              <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-                <img
-                  src="/logo.svg"
-                  style={{ width: "480px", height: "80px" }}
-                  alt="climateChange"
-                />
-                <Divider />
-                <List>
-                  {navItems.map((item) => (
-                    <ListItem key={item} disablePadding>
-                      <ListItemButton
-                        sx={{
-                          textTransform: "capitalize",
-                          textAlign: "center",
-                        }}
-                        onClick={() => window.location.replace(`#${item}`)}
-                      >
-                        <ListItemText primary={item} />
-                      </ListItemButton>
-                    </ListItem>
-                  ))}
-                </List>
-              </Box>
-            </Drawer>
-          </Box>
-        </AppBar>
-
-        <AppBar
-          position="sticky"
-          sx={{
-            backgroundColor: "#fff",
-            color: "#333",
-            boxShadow: "none",
-            flexDirection: { md: "row" },
-            textAlign: "center",
-            flexGrow: 1,
-            maxHeight: "121px",
-          }}
-        >
-          <>
-            <Box
-              sx={{
-                display: { xs: "none", sm: "none", md: "none", lg: "flex" },
-              }}
-              onClick={handleRefresh}
-            >
-              <img
-                src="/logo.svg"
-                style={{
-                  width: "280px",
-                  height: "121px",
-                }}
-              />
-            </Box>
-            <Toolbar
-              disableGutters
-              sx={{
-                justifyContent: "space-between",
-                flexDirection: { xs: "row", sm: "row" },
-                alignItems: { xs: "center", md: "center", lg: "center" },
-                backgroundColor: `${colors.backgroundColor}`,
-                flexGrow: 1,
-                display: { md: "none", lg: "flex", sm: "none", xs: "none" },
-              }}
-            >
-              <Box sx={{ textAlign: "left" }}>
                 <Typography
                   textAlign={"left"}
                   sx={{
                     px: 5,
                     flexGrow: 1,
                     color: "#fff",
-                    fontSize: "40px",
+                    fontSize: "1.7rem",
                     fontWeight: 400,
                     fontFamily: "Contrail One !important",
                   }}
                 >
-                  City Chicken{" "}
+                  City Chicken <br />{" "}
+                  <span style={{ fontSize: "0.875rem" }}>
+                    Das Original seit 1996
+                  </span>
                 </Typography>
-                <Typography
-                  sx={{
-                    px: 5,
-                    flexGrow: 1,
-                    color: "#fff",
-                    fontWeight: 400,
-                    fontFamily: "Contrail One !important",
-                    fontSize: "0.875rem",
-                  }}
+                <IconButton
+                  sx={{ float: "right", mx: 2 }}
+                  onClick={handleDrawerToggle}
                 >
-                  Das Original seit 1996
-                </Typography>
-              </Box>
-              <Box
+                  <MenuIcon sx={{ color: "#fff" }} />
+                </IconButton>
+              </Stack>
+              <Drawer
+                variant="temporary"
+                open={mobileOpen}
+                onClose={handleDrawerToggle}
+                ModalProps={{
+                  keepMounted: true, // Better open performance on mobile.
+                }}
                 sx={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "flex-end",
-                  marginBottom: { xs: 2, sm: 0 },
-                  flexGrow: 2,
-                  ml: 10,
+                  display: { xs: "block", sm: "block", md: "block" },
+                  "& .MuiDrawer-paper": {
+                    boxSizing: "border-box",
+                    width: drawerWidth,
+                  },
                 }}
               >
-                <Box>
-                  {buttons?.map((button) => (
-                    <Button
-                      key={button}
-                      color="inherit"
-                      sx={{
-                        float: "left",
-                        marginRight: 2,
-                        textTransform: "capitalize   !important",
-                        color: "#fff",
-                        fontFamily: "Inter !important",
-                        marginBottom: { xs: 0, sm: 0, md: -4 },
-                        fontWeight: 400,
-                        fontSize: "14px",
-                      }}
-                      onClick={() => handleSectionClick(`${button}`)}
-                    >
-                      {button}
-                      {activeSection == `${button}` && (
-                        <Box
-                          sx={{
-                            position: "absolute",
-                            bottom: 2,
-                            left: 0,
-                            right: 0,
-                            height: 3,
-                            backgroundColor: `${colors.secondaryColor}`,
-                            color: "#fff",
-                          }}
-                        />
-                      )}
-                    </Button>
-                  ))}
-                </Box>
-              </Box>
-              <Box sx={{ display: { xs: "none", sm: "none", md: "flex" } }}>
-                <Box>
-                  <CustomButton
-                    sx={{
-                      maxWidth: "98px",
-                      width: "62px !important",
-                      fontFamily: "Nunito Sans !important",
-                      fontSize: "0.875rem",
-                      color: "#000",
-                      padding: "10px 20px",
-                      backgroundColor: "#D9D9D9 !important",
-                      boxShadow: "none",
-                      textTransform: "capitalize",
-                      borderRadius: "0px !important",
-                      fontWeight: 600,
-                      height: "32px !important",
-
-                      "&:hover": {
-                        backgroundColor: "#fff !important",
-                        boxShadow: "none",
-                        border: "1px solid #C4C4C4",
-                        color: theme.palette.text.primary,
-                      },
-                      mt: 4,
-                    }}
-                    size="small"
-                    text="Logo"
-                    variant="contained"
-                    type="submit"
+                <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+                  <img
+                    src="/logo.svg"
+                    style={{ width: "480px", height: "80px" }}
+                    alt="climateChange"
                   />
+                  <Divider />
+                  <List>
+                    {navItems.map((item) => (
+                      <ListItem key={item} disablePadding>
+                        <ListItemButton
+                          sx={{
+                            textTransform: "capitalize",
+                            textAlign: "center",
+                          }}
+                          onClick={() => window.location.replace(`#${item}`)}
+                        >
+                          <ListItemText primary={item} />
+                        </ListItemButton>
+                      </ListItem>
+                    ))}
+                  </List>
                 </Box>
-                <Divider
-                  orientation="vertical"
-                  color="#fff"
-                  sx={{
-                    color: "#fff !important",
-                    height: "40px",
-                    width: "2px !important",
-                    mx: 1,
-                    mt: 4,
+              </Drawer>
+            </Box>
+          </AppBar>
+        ) : (
+          <AppBar
+            position="sticky"
+            sx={{
+              backgroundColor: "#fff",
+              color: "#333",
+              boxShadow: "none",
+              flexDirection: { md: "row" },
+              textAlign: "center",
+              flexGrow: 1,
+              maxHeight: "121px",
+            }}
+          >
+            <>
+              <Box
+                sx={{
+                  display: { xs: "none", sm: "none", md: "none", lg: "flex" },
+                }}
+                onClick={handleRefresh}
+              >
+                <img
+                  src="/logo.svg"
+                  style={{
+                    width: "280px",
+                    height: "121px",
                   }}
                 />
-                <Typography
-                  mt={4}
-                  mr={5}
+              </Box>
+              <Toolbar
+                disableGutters
+                sx={{
+                  justifyContent: "space-between",
+                  flexDirection: { xs: "row", sm: "row" },
+                  alignItems: { xs: "center", md: "center", lg: "center" },
+                  backgroundColor: `${colors.backgroundColor}`,
+                  flexGrow: 1,
+                  display: { md: "none", lg: "flex", sm: "none", xs: "none" },
+                }}
+              >
+                <Box sx={{ textAlign: "left" }}>
+                  <Typography
+                    textAlign={"left"}
+                    sx={{
+                      px: 5,
+                      flexGrow: 1,
+                      color: "#fff",
+                      fontSize: "40px",
+                      fontWeight: 400,
+                      fontFamily: "Contrail One !important",
+                    }}
+                  >
+                    City Chicken{" "}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      px: 5,
+                      flexGrow: 1,
+                      color: "#fff",
+                      fontWeight: 400,
+                      fontFamily: "Contrail One !important",
+                      fontSize: "0.875rem",
+                    }}
+                  >
+                    Das Original seit 1996
+                  </Typography>
+                </Box>
+                <Box
                   sx={{
-                    color: "#fff",
-                    fontFamily: "Nunito Sans",
-                    textAlign: "left",
-                    fontSize: "14px",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "flex-end",
+                    marginBottom: { xs: 2, sm: 0 },
+                    flexGrow: 2,
+                    ml: 10,
                   }}
                 >
-                  foodfood <br />{" "}
-                  <span style={{ fontSize: "10px" }}>Business Partner</span>
-                </Typography>
-              </Box>
-            </Toolbar>
-          </>
-        </AppBar>
+                  <Box>
+                    {buttons?.map((button) => (
+                      <Button
+                        key={button}
+                        color="inherit"
+                        sx={{
+                          float: "left",
+                          marginRight: 2,
+                          textTransform: "capitalize   !important",
+                          color: "#fff",
+                          fontFamily: "Inter !important",
+                          marginBottom: { xs: 0, sm: 0, md: -4 },
+                          fontWeight: 400,
+                          fontSize: "14px",
+                        }}
+                        onClick={() => handleSectionClick(`${button}`)}
+                      >
+                        {button}
+                        {activeSection == `${button}` && (
+                          <Box
+                            sx={{
+                              position: "absolute",
+                              bottom: 2,
+                              left: 0,
+                              right: 0,
+                              height: 3,
+                              backgroundColor: `${colors.secondaryColor}`,
+                              color: "#fff",
+                            }}
+                          />
+                        )}
+                      </Button>
+                    ))}
+                  </Box>
+                </Box>
+                <Box sx={{ display: { xs: "none", sm: "none", md: "flex" } }}>
+                  <Box>
+                    <CustomButton
+                      sx={{
+                        maxWidth: "98px",
+                        width: "62px !important",
+                        fontFamily: "Nunito Sans !important",
+                        fontSize: "0.875rem",
+                        color: "#000",
+                        padding: "10px 20px",
+                        backgroundColor: "#D9D9D9 !important",
+                        boxShadow: "none",
+                        textTransform: "capitalize",
+                        borderRadius: "0px !important",
+                        fontWeight: 600,
+                        height: "32px !important",
 
-        <section id="" style={{}}>
+                        "&:hover": {
+                          backgroundColor: "#fff !important",
+                          boxShadow: "none",
+                          border: "1px solid #C4C4C4",
+                          color: theme.palette.text.primary,
+                        },
+                        mt: 4,
+                      }}
+                      size="small"
+                      text="Logo"
+                      variant="contained"
+                      type="submit"
+                    />
+                  </Box>
+                  <Divider
+                    orientation="vertical"
+                    color="#fff"
+                    sx={{
+                      color: "#fff !important",
+                      height: "40px",
+                      width: "2px !important",
+                      mx: 1,
+                      mt: 4,
+                    }}
+                  />
+                  <Typography
+                    mt={4}
+                    mr={5}
+                    sx={{
+                      color: "#fff",
+                      fontFamily: "Nunito Sans",
+                      textAlign: "left",
+                      fontSize: "14px",
+                    }}
+                  >
+                    foodfood <br />{" "}
+                    <span style={{ fontSize: "10px" }}>Business Partner</span>
+                  </Typography>
+                </Box>
+              </Toolbar>
+            </>
+          </AppBar>
+        )}
+
+        {/* <section id="" style={{}}>
           <Box sx={{ pt: 0 }}>
             <Box
               sx={{
@@ -398,7 +423,23 @@ const LandingPage: React.FC = () => {
               }}
             ></Box>
           </Box>
+        </section> */}
+
+        <section id="" style={{}}>
+          <Nmage
+            remote
+            height={800}
+            width={1000}
+            style={{
+              width: "100%",
+              // objectPosition,
+            }}
+            src={restaurantImage}
+            alt=""
+            // className={classes.bannerImage}
+          />
         </section>
+
         <section id="restaurant" style={{}}>
           <Container maxWidth="md" sx={{ pt: 10 }}>
             <About />
