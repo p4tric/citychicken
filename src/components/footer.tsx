@@ -30,6 +30,212 @@ const Footer = () => {
           </Stack>
         </Container>
       </Box>
+
+      <Container maxWidth="md" sx={{ pt: 10 }}>
+        <div style={{ marginLeft: "10%" }}>
+          <div>
+            <Typography
+              sx={{
+                flexGrow: 1,
+                color: "#3B3A4A ",
+                fontSize: "32px",
+                fontWeight: 400,
+                fontFamily: "Contrail One !important",
+              }}
+            >
+              Impressum
+            </Typography>
+            <br />
+            <Typography sx={{ color: "#838383", mb: 5, textAlign: "justify" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              auctor volutpat quam, at rhoncus dolor sollicitudin id. Nulla eu
+              volutpat justo, sed aliquam arcu. In hac habitasse platea
+              dictumst. Nulla malesuada tincidunt felis. Pellentesque habitant
+              morbi tristique senectus et netus et malesuada fames ac turpis
+              egestas.
+            </Typography>
+
+            <Typography sx={{ color: "#838383", mb: 5, textAlign: "justify" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              auctor volutpat quam, at rhoncus dolor sollicitudin id. Nulla eu
+              volutpat justo, sed aliquam arcu. In hac habitasse platea
+              dictumst. Nulla malesuada tincidunt felis. Pellentesque habitant
+              morbi tristique senectus et netus et malesuada fames ac turpis
+              egestas.
+            </Typography>
+            <Typography sx={{ color: "#838383", mb: 5, textAlign: "justify" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              auctor volutpat quam, at rhoncus dolor sollicitudin id. Nulla eu
+              volutpat justo, sed aliquam arcu. In hac habitasse platea
+              dictumst. Nulla malesuada tincidunt felis. Pellentesque habitant
+              morbi tristique senectus et netus et malesuada fames ac turpis
+              egestas.
+            </Typography>
+
+            <Typography sx={{ color: "#838383", mb: 5, textAlign: "justify" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              auctor volutpat quam, at rhoncus dolor sollicitudin id. Nulla eu
+              volutpat justo, sed aliquam arcu. In hac habitasse platea
+              dictumst. Nulla malesuada tincidunt felis. Pellentesque habitant
+              morbi tristique senectus et netus et malesuada fames ac turpis
+              egestas.
+            </Typography>
+            <Typography sx={{ color: "#838383", mb: 5, textAlign: "justify" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              auctor volutpat quam, at rhoncus dolor sollicitudin id. Nulla eu
+              volutpat justo, sed aliquam arcu. In hac habitasse platea
+              dictumst. Nulla malesuada tincidunt felis. Pellentesque habitant
+              morbi tristique senectus et netus et malesuada fames ac turpis
+              egestas.
+            </Typography>
+
+            <Typography sx={{ color: "#838383", mb: 5, textAlign: "justify" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              auctor volutpat quam, at rhoncus dolor sollicitudin id. Nulla eu
+              volutpat justo, sed aliquam arcu. In hac habitasse platea
+              dictumst. Nulla malesuada tincidunt felis. Pellentesque habitant
+              morbi tristique senectus et netus et malesuada fames ac turpis
+              egestas.
+            </Typography>
+          </div>
+        </div>
+
+        <div style={{ marginLeft: "10%" }}>
+          <div>
+            <Typography
+              sx={{
+                flexGrow: 1,
+                color: "#3B3A4A ",
+                fontSize: "32px",
+                fontWeight: 400,
+                fontFamily: "Contrail One !important",
+              }}
+            >
+              Datenschutz
+            </Typography>
+            <br />
+            <Typography sx={{ color: "#838383", mb: 5, textAlign: "justify" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              auctor volutpat quam, at rhoncus dolor sollicitudin id. Nulla eu
+              volutpat justo, sed aliquam arcu. In hac habitasse platea
+              dictumst. Nulla malesuada tincidunt felis. Pellentesque habitant
+              morbi tristique senectus et netus et malesuada fames ac turpis
+              egestas.
+            </Typography>
+
+            <Typography sx={{ color: "#838383", mb: 5, textAlign: "justify" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              auctor volutpat quam, at rhoncus dolor sollicitudin id. Nulla eu
+              volutpat justo, sed aliquam arcu. In hac habitasse platea
+              dictumst. Nulla malesuada tincidunt felis. Pellentesque habitant
+              morbi tristique senectus et netus et malesuada fames ac turpis
+              egestas.
+            </Typography>
+            <Typography sx={{ color: "#838383", mb: 5, textAlign: "justify" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              auctor volutpat quam, at rhoncus dolor sollicitudin id. Nulla eu
+              volutpat justo, sed aliquam arcu. In hac habitasse platea
+              dictumst. Nulla malesuada tincidunt felis. Pellentesque habitant
+              morbi tristique senectus et netus et malesuada fames ac turpis
+              egestas.
+            </Typography>
+
+            <Typography sx={{ color: "#838383", mb: 5, textAlign: "justify" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              auctor volutpat quam, at rhoncus dolor sollicitudin id. Nulla eu
+              volutpat justo, sed aliquam arcu. In hac habitasse platea
+              dictumst. Nulla malesuada tincidunt felis. Pellentesque habitant
+              morbi tristique senectus et netus et malesuada fames ac turpis
+              egestas.
+            </Typography>
+            <Typography sx={{ color: "#838383", mb: 5, textAlign: "justify" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              auctor volutpat quam, at rhoncus dolor sollicitudin id. Nulla eu
+              volutpat justo, sed aliquam arcu. In hac habitasse platea
+              dictumst. Nulla malesuada tincidunt felis. Pellentesque habitant
+              morbi tristique senectus et netus et malesuada fames ac turpis
+              egestas.
+            </Typography>
+
+            <Typography sx={{ color: "#838383", mb: 5, textAlign: "justify" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              auctor volutpat quam, at rhoncus dolor sollicitudin id. Nulla eu
+              volutpat justo, sed aliquam arcu. In hac habitasse platea
+              dictumst. Nulla malesuada tincidunt felis. Pellentesque habitant
+              morbi tristique senectus et netus et malesuada fames ac turpis
+              egestas.
+            </Typography>
+          </div>
+        </div>
+
+        <div style={{ marginLeft: "10%" }}>
+          <div>
+            <Typography
+              sx={{
+                flexGrow: 1,
+                color: "#3B3A4A ",
+                fontSize: "32px",
+                fontWeight: 400,
+                fontFamily: "Contrail One !important",
+              }}
+            >
+              Allgemeine Geschaftsbedingungen
+            </Typography>
+            <br />
+            <Typography sx={{ color: "#838383", mb: 5, textAlign: "justify" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              auctor volutpat quam, at rhoncus dolor sollicitudin id. Nulla eu
+              volutpat justo, sed aliquam arcu. In hac habitasse platea
+              dictumst. Nulla malesuada tincidunt felis. Pellentesque habitant
+              morbi tristique senectus et netus et malesuada fames ac turpis
+              egestas.
+            </Typography>
+
+            <Typography sx={{ color: "#838383", mb: 5, textAlign: "justify" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              auctor volutpat quam, at rhoncus dolor sollicitudin id. Nulla eu
+              volutpat justo, sed aliquam arcu. In hac habitasse platea
+              dictumst. Nulla malesuada tincidunt felis. Pellentesque habitant
+              morbi tristique senectus et netus et malesuada fames ac turpis
+              egestas.
+            </Typography>
+            <Typography sx={{ color: "#838383", mb: 5, textAlign: "justify" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              auctor volutpat quam, at rhoncus dolor sollicitudin id. Nulla eu
+              volutpat justo, sed aliquam arcu. In hac habitasse platea
+              dictumst. Nulla malesuada tincidunt felis. Pellentesque habitant
+              morbi tristique senectus et netus et malesuada fames ac turpis
+              egestas.
+            </Typography>
+
+            <Typography sx={{ color: "#838383", mb: 5, textAlign: "justify" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              auctor volutpat quam, at rhoncus dolor sollicitudin id. Nulla eu
+              volutpat justo, sed aliquam arcu. In hac habitasse platea
+              dictumst. Nulla malesuada tincidunt felis. Pellentesque habitant
+              morbi tristique senectus et netus et malesuada fames ac turpis
+              egestas.
+            </Typography>
+            <Typography sx={{ color: "#838383", mb: 5, textAlign: "justify" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              auctor volutpat quam, at rhoncus dolor sollicitudin id. Nulla eu
+              volutpat justo, sed aliquam arcu. In hac habitasse platea
+              dictumst. Nulla malesuada tincidunt felis. Pellentesque habitant
+              morbi tristique senectus et netus et malesuada fames ac turpis
+              egestas.
+            </Typography>
+
+            <Typography sx={{ color: "#838383", mb: 5, textAlign: "justify" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              auctor volutpat quam, at rhoncus dolor sollicitudin id. Nulla eu
+              volutpat justo, sed aliquam arcu. In hac habitasse platea
+              dictumst. Nulla malesuada tincidunt felis. Pellentesque habitant
+              morbi tristique senectus et netus et malesuada fames ac turpis
+              egestas.
+            </Typography>
+          </div>
+        </div>
+      </Container>
     </footer>
   );
 };

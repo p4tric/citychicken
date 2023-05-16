@@ -265,15 +265,15 @@ const LandingPage: React.FC = () => {
               >
                 <img
                   src="/logo.svg"
-                  sx={{
-                    height: {
-                      xs: "100px",
-                      sm: "100px",
-                      md: "100px",
-                      lg: "121px",
-                      xl: "121px",
-                    },
-                  }}
+                  // sx={{
+                  //   height: {
+                  //     xs: "100px",
+                  //     sm: "100px",
+                  //     md: "100px",
+                  //     lg: "121px",
+                  //     xl: "121px",
+                  //   },
+                  // }}
                   style={{
                     width: "280px",
                     height: "121px",
