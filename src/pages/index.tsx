@@ -11,9 +11,10 @@ import {
   Drawer,
   IconButton,
   Stack,
+  Grid,
 } from "@mui/material";
+import { address } from "@/data/address";
 import MenuIcon from "@mui/icons-material/Menu";
-import Image from "next/image";
 import CustomButton from "@/components/common/custom-button";
 import Nmage from "@/components/common/Nmage";
 
@@ -252,17 +253,38 @@ const LandingPage: React.FC = () => {
             <>
               <Box
                 sx={{
-                  display: { xs: "none", sm: "none", md: "none", lg: "flex" },
+                  display: {
+                    xs: "none",
+                    sm: "flex",
+                    md: "flex",
+                    lg: "flex",
+                    xl: "flex",
+                  },
                 }}
                 onClick={handleRefresh}
               >
                 <img
                   src="/logo.svg"
+                  sx={{
+                    height: {
+                      xs: "100px",
+                      sm: "100px",
+                      md: "100px",
+                      lg: "121px",
+                      xl: "121px",
+                    },
+                  }}
                   style={{
                     width: "280px",
                     height: "121px",
                   }}
                 />
+                {/* <Nmage
+                  src="/logo.png"
+                  width={180}
+                  height={180}
+                  style={{ padding: "30px 2rem" }}
+                /> */}
               </Box>
               <Toolbar
                 disableGutters
@@ -272,17 +294,46 @@ const LandingPage: React.FC = () => {
                   alignItems: { xs: "center", md: "center", lg: "center" },
                   backgroundColor: `${colors.backgroundColor}`,
                   flexGrow: 1,
-                  display: { md: "none", lg: "flex", sm: "none", xs: "none" },
+                  display: {
+                    xs: "none",
+                    sm: "none",
+                    md: "flex",
+                    lg: "flex",
+                    xl: "flex",
+                  },
                 }}
               >
-                <Box sx={{ textAlign: "left" }}>
+                <Box
+                  sx={{
+                    textAlign: "left",
+                    width: {
+                      xs: "100%",
+                      sm: "100%",
+                      md: "16%",
+                      lg: "17%",
+                      xl: "22%",
+                    },
+                  }}
+                >
                   <Typography
                     textAlign={"left"}
                     sx={{
-                      px: 5,
+                      padding: {
+                        xs: "1px 10px",
+                        sm: "1px 10px",
+                        md: "1px 10px",
+                        lg: "1px 20px",
+                        xl: "1px 20px",
+                      },
                       flexGrow: 1,
                       color: "#fff",
-                      fontSize: "40px",
+                      fontSize: {
+                        xs: 19,
+                        sm: 19,
+                        md: 19,
+                        lg: 24,
+                        xl: 40,
+                      },
                       fontWeight: 400,
                       fontFamily: "Contrail One !important",
                     }}
@@ -296,7 +347,20 @@ const LandingPage: React.FC = () => {
                       color: "#fff",
                       fontWeight: 400,
                       fontFamily: "Contrail One !important",
-                      fontSize: "0.875rem",
+                      fontSize: {
+                        xs: "0.675rem",
+                        sm: "0.675rem",
+                        md: "0.675rem",
+                        lg: "0.875rem",
+                        xl: "0.875rem",
+                      },
+                      padding: {
+                        xs: "1px 10px",
+                        sm: "1px 10px",
+                        md: "1px 10px",
+                        lg: "1px 20px",
+                        xl: "1px 20px",
+                      },
                     }}
                   >
                     Das Original seit 1996
@@ -309,23 +373,52 @@ const LandingPage: React.FC = () => {
                     alignItems: "flex-end",
                     marginBottom: { xs: 2, sm: 0 },
                     flexGrow: 2,
-                    ml: 10,
+                    marginLeft: {
+                      xs: "9px",
+                      sm: "9px",
+                      md: "9px",
+                      lg: 10,
+                      xl: 10,
+                    },
                   }}
                 >
-                  <Box>
+                  <Box
+                    sx={
+                      {
+                        // background: {
+                        //   xs: "red",
+                        //   sm: "orange",
+                        //   md: "yellow",
+                        //   lg: "green",
+                        //   xl: "blue",
+                        // },
+                      }
+                    }
+                  >
                     {buttons?.map((button) => (
                       <Button
                         key={button}
                         color="inherit"
                         sx={{
-                          float: "left",
-                          marginRight: 2,
-                          textTransform: "capitalize   !important",
+                          marginRight: {
+                            xs: 0.8,
+                            sm: 0.8,
+                            md: 0.5,
+                            lg: 0.9,
+                            xl: 4,
+                          },
+                          textTransform: "capitalize !important",
                           color: "#fff",
                           fontFamily: "Inter !important",
                           marginBottom: { xs: 0, sm: 0, md: -4 },
                           fontWeight: 400,
-                          fontSize: "14px",
+                          fontSize: {
+                            xs: "0.8em",
+                            sm: "0.8em",
+                            md: "0.7em",
+                            lg: "0.9em",
+                            xl: "1em",
+                          },
                         }}
                         onClick={() => handleSectionClick(`${button}`)}
                       >
@@ -408,23 +501,6 @@ const LandingPage: React.FC = () => {
           </AppBar>
         )}
 
-        {/* <section id="" style={{}}>
-          <Box sx={{ pt: 0 }}>
-            <Box
-              sx={{
-                backgroundImage: 'url("/Restaurant.png")',
-                backgroundSize: "cover",
-                height: "100vh",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                mx: 0,
-                width: "100%",
-              }}
-            ></Box>
-          </Box>
-        </section> */}
-
         <section id="" style={{}}>
           <Nmage
             remote
@@ -440,7 +516,7 @@ const LandingPage: React.FC = () => {
           />
         </section>
 
-        <section id="restaurant" style={{}}>
+        <section id="restaurant">
           <Container maxWidth="md" sx={{ pt: 10 }}>
             <About />
           </Container>
@@ -465,7 +541,8 @@ const LandingPage: React.FC = () => {
           id="offnungszeiten"
           style={{ backgroundColor: "#fff", minHeight: "100vh" }}
         >
-          <Container sx={{ pt: 10 }}>
+          {/* <Container sx={{ pt: 10 }}> */}
+          <Container maxWidth="md" sx={{ pt: 10 }}>
             <Timings />
           </Container>
         </section>
@@ -473,9 +550,77 @@ const LandingPage: React.FC = () => {
           id="standort"
           style={{ backgroundColor: "#fff", minHeight: "100vh" }}
         >
+          <Container maxWidth="md" sx={{ pt: 10 }}>
+            <div style={{ marginLeft: "10%" }}>
+              <Typography
+                sx={{
+                  flexGrow: 1,
+                  color: "#3B3A4A ",
+                  fontSize: "32px",
+                  fontWeight: 400,
+                  fontFamily: "Contrail One !important",
+                }}
+              >
+                Standort
+              </Typography>
+            </div>
+          </Container>
+
           <Box>
             <BerlinMap />
           </Box>
+
+          <Container maxWidth="md" sx={{ pt: 10 }}>
+            <div
+              style={{
+                width: "60%",
+                marginLeft: "10%",
+              }}
+            >
+              <Grid container spacing={3}>
+                <Grid item xs={6} sx={{ p: 2, px: 4 }}>
+                  <Stack
+                    direction="row"
+                    sx={{ borderBottom: "1px solid #f1f1f1", pb: 2 }}
+                    justifyContent="space-between"
+                  >
+                    <Typography>{address.name}</Typography>
+                  </Stack>
+                </Grid>
+
+                <Grid item xs={6} sx={{ pb: 2 }}>
+                  <Stack
+                    direction="row"
+                    sx={{ borderBottom: "1px solid #f1f1f1", pb: 2 }}
+                    justifyContent="space-between"
+                  >
+                    <Typography>{address.sonnenallee}</Typography>
+                    <Typography>{address.value}</Typography>
+                  </Stack>
+                </Grid>
+                <Grid
+                  item
+                  xs={6}
+                  sx={{ borderBottom: "1px solid #f1f1f1", pb: 2 }}
+                >
+                  <Stack direction="row" justifyContent="space-between">
+                    <Typography>Email</Typography>
+                    <Typography>{address.email}</Typography>
+                  </Stack>
+                </Grid>
+                <Grid item xs={6}>
+                  <Stack
+                    direction="row"
+                    sx={{ borderBottom: "1px solid #f1f1f1", pb: 2 }}
+                    justifyContent="space-between"
+                  >
+                    <Typography>{address.pin}</Typography>
+                    <Typography>{address.city}</Typography>
+                  </Stack>
+                </Grid>
+              </Grid>
+            </div>
+          </Container>
         </section>
       </Box>
       <Footer />

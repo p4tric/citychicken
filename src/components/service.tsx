@@ -5,7 +5,7 @@ import { cuisine } from "@/data/cuisine";
 
 const Service = () => {
   return (
-    <div>
+    <div style={{ marginLeft: "10%" }}>
       <div>
         <Typography
           sx={{

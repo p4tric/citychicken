@@ -2,7 +2,7 @@ import React from "react";
 import { Typography, Container } from "@mui/material";
 const About = () => {
   return (
-    <>
+    <div style={{ marginLeft: "10%" }}>
       <Typography
         sx={{
           color: "#3B3A4A",
@@ -17,7 +17,7 @@ const About = () => {
         In unserem Restaurant <br /> werden Ihnen XXX, XXX <br /> und XXX
         Speisen serviert.
       </Typography>
-    </>
+    </div>
   );
 };
 

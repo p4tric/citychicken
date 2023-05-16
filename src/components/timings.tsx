@@ -7,9 +7,10 @@ import LocalFireDepartmentIcon from "@mui/icons-material/LocalFireDepartment";
 import PauseIcon from "@mui/icons-material/Pause";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import { days, pause } from "@/data/timing";
+
 const Timings = () => {
   return (
-    <div>
+    <div style={{ marginLeft: "10%" }}>
       <div>
         <Container sx={{ px: "0 !important" }} maxWidth="md">
           <Typography

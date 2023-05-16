@@ -12,7 +12,7 @@ import { payment } from "@/data/payments";
 
 const Payments = () => {
   return (
-    <div>
+    <div style={{ marginTop: "2rem", marginLeft: "10%" }}>
       <div>
         <Typography sx={{ color: "#838383" }}>
           Sie können bei ins vor Ort mit <br /> folgenden Zahlungsmittel zahlen:
